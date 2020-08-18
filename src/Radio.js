@@ -9,29 +9,14 @@ class Radio extends React.Component {
         super();
         this.state = {
             channels : [],
-            activeChannel : ""
-            
+            activeChannel : null            
         }
     }
 
-    render() {
+    changeStation() {
         return (
-            <div className="Radio">
-                <ReactAudioPlayer
-                    className="chillLofi"
-                    src={}
-                />
-                <ReactAudioPlayer
-                    className="animeStyle"
-                    src={}
-                />
-                <ReactAudioPlayer
-                    className="bossaNova"
-                    src={}
-                />
-            </div>
-
-        );
+            <Channel station={{name: something from the Radio state , source : , gif : }}
+        )
     }
 
 }
