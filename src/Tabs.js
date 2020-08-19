@@ -4,41 +4,7 @@ import "./Tabs.css"
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
+import Radio from './Radio.js';
 
 
 export default function SimpleTabs() {
@@ -52,11 +18,12 @@ export default function SimpleTabs() {
     <div className="tabs">
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Chill lofi" {...a11yProps(0)} />
-          <Tab label="Anime style" {...a11yProps(1)} />
-          <Tab label="Bossa Nova" {...a11yProps(2)} />
+          <Tab label="Chill lofi" />
+          <Tab label="Anime style" />
+          <Tab label="Jazz Hop" />
         </Tabs>
       </AppBar>
+      {value === 0 && Radio.}
     </div>
   );
 }

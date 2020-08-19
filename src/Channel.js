@@ -10,12 +10,14 @@ class Channel extends React.Component {
         return(
             <div className="channel">
                 <ReactAudioPlayer
-                    className={this.props.name}
-                    src={this.props.source}
+                    className={this.props.station.name}
+                    src={this.props.station.source}
                     autoPlay
                 />
-                <img src={this.props.gif}></img>
+                <img src={this.props.station.gif}></img>
             </div>
         )
     }
 }
+
+export default Channel;
