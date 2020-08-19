@@ -10,16 +10,6 @@ import SimpleTabs from './Tabs';
 
 class Radio extends React.Component {
 
-    /*
-    channels example:
-    [
-        {
-            name : chillbeats,
-            src : "/path/to/src"
-            gif : "/path/to/gif"
-        }
-    ]
-    */
     constructor() {
         super();
         this.state = {
@@ -38,23 +28,13 @@ class Radio extends React.Component {
         }
     }
 
-    changeStation(i) {
-        return (
-            <Channel
-                station={{
-                    name: this.state.channels[i].name,
-                    source: this.state.channels[i].src,
-                    gif: this.state.channels[i].gif
-                }}
-            />
-        )
-    }
+
 
     render() {
         return (
             <div className="radio">
                 <header>
-                    <SimpleTabs/>
+                    <SimpleTabs channels={this.state.channels} />
                 </header>
             </div>
         )
