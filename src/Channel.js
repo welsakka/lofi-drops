@@ -11,10 +11,13 @@ class Channel extends React.Component {
             <div className="channel">
                 <ReactAudioPlayer
                     className={this.props.station.name}
-                    src={this.props.station.source}
+                    src={this.props.station.src}
                     autoPlay
+                    loop='true'
+                    muted={this.props.station.isMuted}
+
                 />
-                <img src={this.props.station.gif}></img>
+                {this.props.station.isTunedIn && <img src={this.props.station.gif}></img>}
             </div>
         )
     }

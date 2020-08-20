@@ -8,6 +8,7 @@ import gif1 from './assets/gifs/anime.gif';
 import gif2 from './assets/gifs/cowboy.gif';
 import SimpleTabs from './Tabs';
 
+//This class holds all the data for the channels
 class Radio extends React.Component {
 
     constructor() {
@@ -15,26 +16,42 @@ class Radio extends React.Component {
         this.state = {
             channels: [
                 {
-                    name: "chillBeats",
+                    name: "Chill lofi",
                     src: song,
-                    gif: gif1
+                    gif: gif1,
+                    isTunedIn : true,
+                    isMuted : false
                 },
                 {
-                    name: "animeBeats",
+                    name: "Anime style",
                     src: song,
-                    gif: gif2
+                    gif: gif2,
+                    isTunedIn : false,
+                    isMuted : true
+                },
+                {
+                    name: "Jazz Hop",
+                    src: song,
+                    gif: gif2,
+                    isTunedIn : false,
+                    isMuted : true
                 }
             ]
         }
     }
 
+    changeStation(i) {
+        this.setState( {channels :  } )
+    }
 
-
+    //<SimpleTabs channels={this.state.channels} /> Return this back to header
     render() {
         return (
             <div className="radio">
                 <header>
-                    <SimpleTabs channels={this.state.channels} />
+                    <Channel station={this.state.channels[0]} />
+                    <Channel station={this.state.channels[1]} />
+                    <Channel station={this.state.channels[2]} />
                 </header>
             </div>
         )
