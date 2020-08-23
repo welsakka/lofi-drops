@@ -4,23 +4,21 @@ import ReactAudioPlayer from 'react-audio-player';
 
 //Channel class - Multiple channels to a radio. Includes all necessary data for 
 //each channel
-class Channel extends React.Component {
+function Channel (props) {
 
-    render(){
-        return(
-            <div className="channel">
-                <ReactAudioPlayer
-                    className={this.props.station.name}
-                    src={this.props.station.src}
-                    autoPlay
-                    loop='true'
-                    muted={this.props.station.isMuted}
+    return(
+        <div className="channel">
+            <ReactAudioPlayer
+                className={props.station.name}
+                src={props.station.src}
+                autoPlay
+                loop='true'
+                muted={props.station.isMuted}
 
-                />
-                {this.props.station.isTunedIn && <img src={this.props.station.gif}></img>}
-            </div>
-        )
-    }
+            />
+            {props.station.isTunedIn && <img src={props.station.gif}></img>}
+        </div>
+    )
 }
 
 export default Channel;
