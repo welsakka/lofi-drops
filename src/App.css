@@ -1,21 +1,21 @@
 
 .App-chill {
   text-align: center;
-  background:  url(./assets/gifs/anime.gif) no-repeat center center fixed; 
+  background:  url(./assets/gifs/chill/anime.gif) no-repeat center center fixed; 
   background-size: cover;
   min-height: 100vh;
 }
 
 .App-jazz {
   text-align: center;
-  background:  url(./assets/gifs/cowboy.gif) no-repeat center center fixed; 
+  background:  url(./assets/gifs/jazz/cowboy.gif) no-repeat center center fixed; 
   background-size: cover;
   min-height: 100vh;
 }
 
-.App-anime {
+.App-asian {
   text-align: center;
-  background:  url(./assets/gifs/cowboy.gif) no-repeat center center fixed; 
+  background:  url(./assets/gifs/asian/anime.gif) no-repeat center center fixed; 
   background-size: cover;
   min-height: 100vh;
 }

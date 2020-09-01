@@ -6,10 +6,10 @@ import Container from '@material-ui/core/Container';
 import Copyright from './Copyright';
 import { makeStyles } from '@material-ui/core/styles';
 
-import song from './assets/music/bebop.mp3';
-import song2 from './assets/music/too_good_too_bad.mp3';
-import gif1 from './assets/gifs/anime.gif';
-import gif2 from './assets/gifs/cowboy.gif';
+import song from './assets/music/chill/bebop.mp3';
+import song2 from './assets/music/jazz/too_good_too_bad.mp3';
+import gif1 from './assets/gifs/asian/anime.gif'
+import gif2 from './assets/gifs/chill/anime.gif';
 import SimpleTabs from './Tabs';
 
 //This class holds all the data for the channels
@@ -28,8 +28,8 @@ class App extends React.Component {
                     isMuted: false
                 },
                 {
-                    name: "Anime style",
-                    cssName : "App-anime",
+                    name: "Asian style",
+                    cssName : "App-asian",
                     src: song2,
                     gif: gif2,
                     isTunedIn: false,
@@ -64,25 +64,19 @@ class App extends React.Component {
         })
     }
 
-    /*
-                    onChannelChange0={() => this.changeChannel(0)}
-                            onChannelChange1={() => this.changeChannel(1)}
-                            onChannelChange2={() => this.changeChannel(2)}
-
-    */
     render() {
-
+        //array of Channel components
         const channels = this.state.channels.map(channel => <Channel station={channel}/>);
+        //array of arrow functions for changeChannel method
         const changeChannels = this.state.channels.map( (channel, index) => {
             return( () => this.changeChannel(index) )        
         });
 
-        console.log(changeChannels);
         return (
+            //div className named dynamically to render the proper css 
             <div className={this.state.channels[this.state.activeChannel].cssName}>
                 <Container>
                     <header>
-                        {/*SimpleTabs logic obtained from https://stackoverflow.com/questions/57106772/how-to-call-parent-function-with-usestate-hook-in-react */}
                         <SimpleTabs changeChannelX={changeChannels} state={this.state} />
                     </header>
 
