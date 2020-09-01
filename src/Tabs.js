@@ -12,13 +12,15 @@ export default function SimpleTabs(props) {
     setValue(newValue);
   };
 
+  
+
   return (
     <div className="tabs">
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange}>
-          <Tab label={props.state.channels[0].name} onClick={props.onChannelChange0} />
-          <Tab label={props.state.channels[1].name} onClick={props.onChannelChange1}/>
-          <Tab label={props.state.channels[2].name} onClick={props.onChannelChange2}/>
+          <Tab label={props.state.channels[0].name} onClick={props.changeChannelX[0]} />
+          <Tab label={props.state.channels[1].name} onClick={props.changeChannelX[1]}/>
+          <Tab label={props.state.channels[2].name} onClick={props.changeChannelX[2]}/>
         </Tabs>
       </AppBar>
     </div>

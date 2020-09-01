@@ -64,20 +64,26 @@ class App extends React.Component {
         })
     }
 
+    /*
+                    onChannelChange0={() => this.changeChannel(0)}
+                            onChannelChange1={() => this.changeChannel(1)}
+                            onChannelChange2={() => this.changeChannel(2)}
+
+    */
     render() {
 
         const channels = this.state.channels.map(channel => <Channel station={channel}/>);
-        
+        const changeChannels = this.state.channels.map( (channel, index) => {
+            return( () => this.changeChannel(index) )        
+        });
+
+        console.log(changeChannels);
         return (
             <div className={this.state.channels[this.state.activeChannel].cssName}>
                 <Container>
                     <header>
                         {/*SimpleTabs logic obtained from https://stackoverflow.com/questions/57106772/how-to-call-parent-function-with-usestate-hook-in-react */}
-                        <SimpleTabs 
-                            onChannelChange0={() => this.changeChannel(0)}
-                            onChannelChange1={() => this.changeChannel(1)}
-                            onChannelChange2={() => this.changeChannel(2)}
-                            state={this.state} />
+                        <SimpleTabs changeChannelX={changeChannels} state={this.state} />
                     </header>
 
                     <body>
