@@ -66,6 +66,8 @@ class App extends React.Component {
 
     render() {
 
+        const channels = this.state.channels.map(channel => <Channel station={channel}/>);
+        
         return (
             <div className={this.state.channels[this.state.activeChannel].cssName}>
                 <Container>
@@ -78,10 +80,10 @@ class App extends React.Component {
                             state={this.state} />
                     </header>
 
-                    <Channel station={this.state.channels[0]} />
-                    <Channel station={this.state.channels[1]} />
-                    <Channel station={this.state.channels[2]} />
-
+                    <body>
+                        {channels}
+                    </body>
+                    
                     <Copyright />
                 </Container>
             </div>
