@@ -7,9 +7,7 @@ function Copyright() {
       <div className="copyright">
         <Typography variant="body2" align="center">
           {'Copyright © '}
-          <Link color="inherit" href="https://material-ui.com/">
             lofi-drops.com
-        </Link>{' '}
           {new Date().getFullYear()}
           {'.'}
         </Typography>

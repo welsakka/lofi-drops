@@ -49,6 +49,10 @@ class App extends React.Component {
         this.changeChannel = this.changeChannel.bind(this);
     }
 
+    //TODO 
+    //Create a method that reads the files in a directory. Possible solution:
+    //Use the public folder in react.
+
 
     //Method that takes in array index number to identify which channel to tune into. Logic taken from :
     // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react/43639228
