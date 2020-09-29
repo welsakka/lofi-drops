@@ -8,19 +8,12 @@ import ReactAudioPlayer from 'react-audio-player';
 function Channel(props) {
 
     const handleOnEnded = () => {}
-
-    const myStyle = {
-        
-            textAlign: "center",
-            background:  "url(./assets/gifs/chill/anime.gif) no-repeat center center fixed",
-            backgroundSize: "cover",
-            minHeight: "100vh"  
-    }
+    
     return (
         <div className={styles[props.cssName]}>
             <ReactAudioPlayer
                 className={props.station.name}
-                src={process.env.PUBLIC_URL + "/chill/too_good_too_bad.mp3"}
+                src={props.station.src}
                 autoPlay
                 loop='true'
                 muted={props.station.isMuted}

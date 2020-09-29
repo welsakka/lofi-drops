@@ -12,6 +12,15 @@ import gif1 from './assets/gifs/asian/anime.gif'
 import gif2 from './assets/gifs/chill/anime.gif';
 import SimpleTabs from './Tabs';
 
+/*--------------------------------------------------
+TODO:
+
+- find a way to dynamically change css. Potential solutions:
+    - incorporate the css in the state of the app. Change the state in the changeChannels function.
+
+---------------------------------------------------*/
+
+
 //This class holds all the data for the channels
 class App extends React.Component {
 
@@ -44,16 +53,17 @@ class App extends React.Component {
                     isMuted: true
                 }
             ],
-            activeChannel: 0
+            activeChannel: 0,
+            currentStyle : {
+                textAlign: "center",
+                background:  "url(./assets/gifs/chill/anime.gif) no-repeat center center fixed",
+                backgroundSize: "cover",
+                minHeight: "100vh"  
+            }
+            
         }
         this.changeChannel = this.changeChannel.bind(this);
     }
-
-    //TODO 
-    //Create a method that reads the files in a directory. Possible solution:
-    //Use the public folder in react.
-    //Use the require.context from webpack to load all files from a folder
-
 
     //Method that takes in array index number to identify which channel to tune into. Logic taken from :
     // https://stackoverflow.com/questions/43638938/updating-an-object-with-setstate-in-react/43639228
@@ -64,7 +74,14 @@ class App extends React.Component {
                 channels: prevState.channels.map((item, index) =>
                     index === i ? { ...item, isTunedIn: true, isMuted: false } : { ...item, isTunedIn: false, isMuted: true }
                 ),
-                activeChannel: i
+                activeChannel: i,
+                currentStyle : {
+                    textAlign: "center",
+                    background:  "url(./assets/gifs/chill/anime.gif) no-repeat center center fixed",
+                    backgroundSize: "cover",
+                    minHeight: "100vh"  
+                }
+
             }
         })
     }
