@@ -7,8 +7,14 @@ import ReactAudioPlayer from 'react-audio-player';
 //each channel
 function Channel(props) {
 
-    const handleOnEnded = () => {
+    const handleOnEnded = () => {}
+
+    const myStyle = {
         
+            textAlign: "center",
+            background:  "url(./assets/gifs/chill/anime.gif) no-repeat center center fixed",
+            backgroundSize: "cover",
+            minHeight: "100vh"  
     }
     return (
         <div className={styles[props.cssName]}>

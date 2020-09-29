@@ -52,6 +52,7 @@ class App extends React.Component {
     //TODO 
     //Create a method that reads the files in a directory. Possible solution:
     //Use the public folder in react.
+    //Use the require.context from webpack to load all files from a folder
 
 
     //Method that takes in array index number to identify which channel to tune into. Logic taken from :
@@ -68,6 +69,10 @@ class App extends React.Component {
         })
     }
 
+    importAll(r) {
+        return r.keys().map(r);
+    }
+
     render() {
         //array of Channel components
         const channels = this.state.channels.map(channel => <Channel station={channel}/>);
@@ -75,6 +80,10 @@ class App extends React.Component {
         const changeChannels = this.state.channels.map( (channel, index) => {
             return( () => this.changeChannel(index) )        
         });
+        //arrays of all gifs in the filepath specified. Makes use of webpacks's require.context.
+        const asianGifs = this.importAll(require.context('./assets/gifs/asian', false, /\.(png|jpe?g|svg)$/));
+        const chillGifs = this.importAll(require.context('./assets/gifs/chill', false, /\.(png|jpe?g|svg)$/));
+        const jazzGifs = this.importAll(require.context('./assets/gifs/jazz', false, /\.(png|jpe?g|svg)$/));
 
         return (
             //div className named dynamically to render the proper css 
